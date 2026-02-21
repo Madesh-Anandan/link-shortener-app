@@ -10,6 +10,10 @@ import { CopyButton } from "@/components/copy-button";
 import { CreateLinkForm } from "@/components/create-link-form";
 import { getBaseUrl } from "@/lib/get-base-url";
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export default async function DashboardPage() {
   const { userId } = await auth();
   

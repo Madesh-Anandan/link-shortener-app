@@ -3,6 +3,10 @@ import { db } from "@/db";
 import { links } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 interface PageProps {
   params: Promise<{
     shortCode: string;
