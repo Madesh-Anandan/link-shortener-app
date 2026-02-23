@@ -150,3 +150,40 @@
 .cl-userProfile-root div[class*="activeDevices"] {
   display: none !important;
 }
+
+/* Ensure Clerk sign-in/sign-up components are visible */
+.cl-signIn-root,
+.cl-signUp-root {
+  display: block !important;
+}
+
+.cl-signIn-root input,
+.cl-signUp-root input,
+.cl-signIn-root button,
+.cl-signUp-root button,
+.cl-formFieldInput,
+.cl-formButtonPrimary {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure form fields have proper styling */
+.cl-formFieldInput {
+  background-color: var(--background) !important;
+  border: 1px solid var(--input) !important;
+  color: var(--foreground) !important;
+  padding: 0.5rem !important;
+  border-radius: var(--radius-md) !important;
+  width: 100% !important;
+}
+
+/* Ensure buttons are visible */
+.cl-formButtonPrimary {
+  background-color: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: var(--radius-md) !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+}
