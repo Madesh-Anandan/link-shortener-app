@@ -32,10 +32,10 @@ export function CreateLinkForm() {
         const form = document.getElementById("create-link-form") as HTMLFormElement;
         form?.reset();
         
-        // Refresh the page after a short delay to show the new link
+        // Refresh the page after 5 seconds to show the new link in the list
         setTimeout(() => {
           window.location.reload();
-        }, 2000);
+        }, 5000);
       } else {
         setError(result.error || "Failed to create link");
       }
@@ -98,16 +98,22 @@ export function CreateLinkForm() {
           )}
 
           {success && (
-            <div className="space-y-2 rounded-md bg-green-500/10 p-3">
+            <div className="space-y-3 rounded-md bg-green-500/10 p-4 border border-green-500/20">
               <p className="text-sm font-medium text-green-600 dark:text-green-400">
-                Link created successfully!
+                ✓ Link created successfully!
               </p>
-              <div className="flex items-center gap-2">
-                <code className="flex-1 rounded bg-muted px-2 py-1 text-sm">
-                  {baseUrl}/{success.shortCode}
-                </code>
-                <CopyButton textToCopy={`${baseUrl}/${success.shortCode}`} />
+              <div className="space-y-2">
+                <p className="text-xs text-muted-foreground">Your shortened link:</p>
+                <div className="flex items-center gap-2">
+                  <code className="flex-1 rounded bg-muted px-3 py-2 text-sm font-mono">
+                    {baseUrl}/{success.shortCode}
+                  </code>
+                  <CopyButton textToCopy={`${baseUrl}/${success.shortCode}`} />
+                </div>
               </div>
+              <p className="text-xs text-muted-foreground italic">
+                Page will refresh in 5 seconds to show your new link...
+              </p>
             </div>
           )}
 
