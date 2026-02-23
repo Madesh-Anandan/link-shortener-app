@@ -103,7 +103,9 @@ export function CreateLinkForm() {
                 ✓ Link created successfully!
               </p>
               <div className="space-y-2">
-                <p className="text-xs text-muted-foreground">Your shortened link:</p>
+                <p className="text-xs font-semibold text-green-700 dark:text-green-300">
+                  🌐 Your PUBLIC shortened link (anyone can use):
+                </p>
                 <div className="flex items-center gap-2">
                   <code className="flex-1 rounded bg-muted px-3 py-2 text-sm font-mono">
                     {baseUrl}/{success.shortCode}
@@ -111,6 +113,9 @@ export function CreateLinkForm() {
                   <CopyButton textToCopy={`${baseUrl}/${success.shortCode}`} />
                 </div>
               </div>
+              <p className="text-xs text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-950 rounded px-2 py-1">
+                ℹ️ This link is PUBLIC - no login required. Share it with anyone!
+              </p>
               <p className="text-xs text-muted-foreground italic">
                 Page will refresh in 5 seconds to show your new link...
               </p>

@@ -77,7 +77,7 @@ export default async function DashboardPage() {
                           <div className="flex-1 space-y-2 overflow-hidden">
                             <div className="space-y-1">
                               <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
-                                Short Link
+                                🌐 Short Link (PUBLIC - Anyone can access)
                               </p>
                               <div className="flex items-center gap-2">
                                 <code className="rounded bg-emerald-100 dark:bg-emerald-950 border border-emerald-200 dark:border-emerald-800 px-3 py-1.5 text-sm font-medium text-emerald-700 dark:text-emerald-300">
@@ -88,7 +88,7 @@ export default async function DashboardPage() {
                             </div>
                             <div className="space-y-1">
                               <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
-                                Original URL
+                                📍 Redirects to
                               </p>
                               <p className="truncate text-sm text-zinc-700 dark:text-zinc-300 bg-zinc-50 dark:bg-zinc-900 rounded px-3 py-1.5 border border-zinc-200 dark:border-zinc-800">
                                 {link.url}
