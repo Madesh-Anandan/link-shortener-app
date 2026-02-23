@@ -34,35 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider
-      appearance={{
-        baseTheme: undefined,
-        variables: {
-          colorPrimary: '#171717',
-          colorBackground: '#ffffff',
-          colorInputBackground: '#ffffff',
-          colorInputText: '#0a0a0a',
-          colorText: '#0a0a0a',
-          colorTextSecondary: '#737373',
-          colorDanger: '#e40014',
-          borderRadius: '0.375rem',
-          fontFamily: 'var(--font-geist-sans)',
-        },
-        elements: {
-          rootBox: 'w-full',
-          card: 'bg-white shadow-2xl border-0',
-          headerTitle: 'text-zinc-900 text-2xl font-bold',
-          headerSubtitle: 'text-zinc-600 text-sm',
-          socialButtonsBlockButton: 'bg-white border-2 border-zinc-300 text-zinc-900 hover:bg-zinc-50',
-          formFieldLabel: 'text-zinc-900 font-medium text-sm mb-1',
-          formFieldInput: 'bg-white border-2 border-zinc-300 text-zinc-900 rounded-md px-3 py-2 focus:border-zinc-900 focus:ring-2 focus:ring-zinc-900/20',
-          formButtonPrimary: 'bg-zinc-900 hover:bg-zinc-800 text-white font-medium rounded-md px-4 py-2.5',
-          footerActionLink: 'text-zinc-900 hover:text-zinc-700 font-medium',
-          identityPreviewText: 'text-zinc-900',
-          formFieldInputShowPasswordButton: 'text-zinc-600 hover:text-zinc-900',
-        },
-      }}
-    >
+    <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <head>
           <script
