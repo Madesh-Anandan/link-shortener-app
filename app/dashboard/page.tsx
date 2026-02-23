@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Link2 } from "lucide-react";
 import { CreateLinkForm } from "@/components/create-link-form";
 import { LinkItem } from "@/components/link-item";
+import { DeleteAllButton } from "@/components/delete-all-button";
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic';
@@ -46,12 +47,19 @@ export default async function DashboardPage() {
           <div className="lg:col-span-2">
             <Card>
               <CardHeader>
-                <CardTitle>Your Links</CardTitle>
-                <CardDescription>
-                  {userLinks.length === 0
-                    ? "No links yet. Create your first one!"
-                    : `${userLinks.length} link${userLinks.length === 1 ? "" : "s"}`}
-                </CardDescription>
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <CardTitle>Your Links</CardTitle>
+                    <CardDescription>
+                      {userLinks.length === 0
+                        ? "No links yet. Create your first one!"
+                        : `${userLinks.length} link${userLinks.length === 1 ? "" : "s"}`}
+                    </CardDescription>
+                  </div>
+                  {userLinks.length > 0 && (
+                    <DeleteAllButton linkCount={userLinks.length} />
+                  )}
+                </div>
               </CardHeader>
               <CardContent>
                 {userLinks.length === 0 ? (
