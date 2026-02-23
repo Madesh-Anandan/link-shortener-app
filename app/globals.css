@@ -128,53 +128,25 @@
   }
 }
 
-/* Hide Clerk Profile sections */
+/* Hide Clerk Profile sections - ONLY on user profile pages */
 
 /* Hide ALL badges (Primary, Unverified, etc.) */
-.cl-badge,
-.cl-internal-badge,
-[class*="badge"] {
+.cl-userProfile-root .cl-badge,
+.cl-userProfile-root .cl-internal-badge,
+.cl-userProfile-root [class*="badge"] {
   display: none !important;
 }
 
-/* Hide "Add email address" button in Profile section - Multiple approaches */
-.cl-profileSection__emailAddresses button[type="button"],
-.cl-profileSection__emailAddresses .cl-formButtonPrimary,
-.cl-userProfile-root button:has([data-localization-key*="emailAddress"]),
-div[class*="emailAddresses"] button.cl-formButtonPrimary,
-button.cl-formButtonPrimary[type="button"]:not([type="submit"]) {
-  display: none !important;
-}
-
-/* Hide only the add email button, not the email list */
-.cl-profileSection__emailAddresses button[data-localization-key*="add"],
-.cl-profileSection__emailAddresses .cl-formButtonPrimary:has([data-localization-key*="add"]) {
+/* Hide "Add email address" button in Profile section ONLY */
+.cl-userProfile-root .cl-profileSection__emailAddresses button[type="button"]:not([form]),
+.cl-userProfile-root .cl-profileSection__emailAddresses .cl-formButtonPrimary:first-of-type,
+.cl-userProfile-root div[class*="emailAddresses"] button.cl-formButtonPrimary:first-of-type {
   display: none !important;
 }
 
 /* Hide "Active devices" section in Security */
-.cl-profileSection__activeDevices,
-section[class*="activeDevices"],
-div[class*="activeDevices"],
-.cl-userProfile-root section:has(h2[data-localization-key*="activeDevices"]),
-.cl-profileSection:has([data-localization-key*="activeDevices"]) {
+.cl-userProfile-root .cl-profileSection__activeDevices,
+.cl-userProfile-root section[class*="activeDevices"],
+.cl-userProfile-root div[class*="activeDevices"] {
   display: none !important;
-}
-
-/* Additional targeting for active devices */
-[class*="userProfile"] [class*="section"]:nth-child(2) {
-  display: none !important;
-}
-
-/* Hide any element with active devices title */
-h2[data-localization-key*="activeDevices"],
-h3[data-localization-key*="activeDevices"] {
-  display: none !important;
-}
-
-/* Ensure username field is visible in profile section */
-.cl-profileSection__username,
-div[class*="username"],
-[data-localization-key*="username"] {
-  display: block !important;
 }
