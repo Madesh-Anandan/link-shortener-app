@@ -1,6 +1,7 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
+// Only protect dashboard routes - everything else is public
 const isProtectedRoute = createRouteMatcher(["/dashboard(.*)"]);
 
 export default clerkMiddleware(async (auth, req) => {
@@ -11,10 +12,12 @@ export default clerkMiddleware(async (auth, req) => {
     return NextResponse.redirect(new URL("/dashboard", req.url));
   }
 
-  // Redirect unauthenticated users from protected routes to home
-  if (!userId && isProtectedRoute(req)) {
+  // Protect dashboard - redirect unauthenticated users to home
+  if (isProtectedRoute(req) && !userId) {
     return NextResponse.redirect(new URL("/", req.url));
   }
+  
+  // All other routes (including short codes) are public
 });
 
 export const config = {
